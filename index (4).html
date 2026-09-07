@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Retail20inversiones - Guía introductoria para empezar a invertir" />
+  <title>Retail20inversiones | Empezá a invertir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --navy: #071225;
+  --navy-2: #0b1930;
+  --navy-3: #10213e;
+  --blue: #3568ff;
+  --blue-2: #5d84ff;
+  --blue-soft: #edf3ff;
+  --ink: #101a2c;
+  --muted: #667085;
+  --line: #e5eaf2;
+  --soft: #f6f8fc;
+  --white: #ffffff;
+  --green: #25a66b;
+  --amber: #d88d17;
+  --red: #dd5a5a;
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+  --shadow: 0 24px 70px rgba(18, 34, 66, .10);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+img, svg { max-width: 100%; }
+.container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+.section { padding: 104px 0; position: relative; overflow: hidden; }
+.soft-section { background: var(--soft); }
+.dark-section { background: var(--navy); color: var(--white); }
+.centered { text-align: center; max-width: 760px; margin-left: auto; margin-right: auto; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.93);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(226,232,240,.85);
+}
+.nav-wrap {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.03em; }
+.brand-mark {
+  width: 42px; height: 42px; display: grid; place-items: center;
+  color: var(--white); background: var(--navy); border-radius: 12px;
+  font-size: 13px; letter-spacing: -.02em;
+}
+.brand-name { font-size: 16px; }
+.main-nav { display: flex; align-items: center; gap: 21px; font-size: 13px; font-weight: 600; color: #3f4b61; }
+.main-nav a { transition: .2s ease; }
+.main-nav a:hover { color: var(--blue); }
+.main-nav .nav-cta {
+  background: var(--navy); color: var(--white); padding: 11px 16px; border-radius: 11px;
+}
+.menu-toggle {
+  display: none; border: 0; background: transparent; width: 42px; height: 42px; padding: 9px;
+}
+.menu-toggle span { display: block; height: 2px; background: var(--navy); margin: 5px 0; border-radius: 4px; }
+
+.hero {
+  min-height: 720px;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(78,119,255,.11), transparent 28%),
+    linear-gradient(180deg, #fbfdff 0%, #fff 100%);
+}
+.hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 72px; align-items: center; position: relative; z-index: 2; }
+.hero-copy h1 {
+  margin: 20px 0 24px; max-width: 720px;
+  font-size: clamp(46px, 5.2vw, 72px); line-height: 1.03; letter-spacing: -.055em; font-weight: 700;
+}
+.hero-copy h1 strong { color: var(--blue); font-weight: 700; }
+.eyebrow, .section-kicker {
+  font-size: 12px; letter-spacing: .12em; font-weight: 800; color: var(--blue);
+}
+.eyebrow { display: inline-flex; align-items: center; gap: 9px; }
+.eyebrow span { width: 24px; height: 2px; background: var(--blue); }
+.hero-text { color: var(--muted); font-size: 18px; line-height: 1.75; max-width: 650px; }
+.hero-actions { display: flex; gap: 12px; margin-top: 34px; }
+.btn {
+  min-height: 48px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 0 21px; border-radius: 12px; border: 1px solid transparent;
+  font-size: 14px; font-weight: 700; transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 12px 28px rgba(53,104,255,.25); }
+.btn-secondary { background: var(--white); border-color: var(--line); color: var(--ink); }
+.btn-full { width: 100%; }
+.hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.hero-pills span {
+  background: var(--white); border: 1px solid var(--line); border-radius: 999px;
+  padding: 8px 11px; font-size: 11px; font-weight: 700; color: #556176;
+}
+
+.hero-panel {
+  background: var(--navy); color: var(--white); border-radius: var(--radius-lg);
+  padding: 30px; box-shadow: 0 40px 90px rgba(6, 17, 36, .24); position: relative;
+}
+.hero-panel:before {
+  content:""; position:absolute; inset:1px; border-radius: 27px; pointer-events:none;
+  border:1px solid rgba(255,255,255,.06);
+}
+.panel-top { display:flex; justify-content:space-between; gap:20px; align-items:flex-start; padding-bottom:23px; border-bottom:1px solid rgba(255,255,255,.09); }
+.panel-top h2 { font-size:20px; letter-spacing:-.03em; margin:7px 0 0; }
+.mini-label { font-size:10px; letter-spacing:.14em; color:#8ca1c9; font-weight:800; }
+.status-dot {
+  font-size:10px; font-weight:700; color:#8ff0bc; background:rgba(37,166,107,.14);
+  border:1px solid rgba(77,213,143,.23); border-radius:999px; padding:7px 10px;
+}
+.status-dot:before { content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background:#53d993; margin-right:6px; }
+.journey { padding:25px 0 16px; }
+.journey-step { display:flex; gap:15px; align-items:center; }
+.journey-step > span {
+  flex:0 0 38px; width:38px; height:38px; display:grid; place-items:center; border-radius:11px;
+  background:var(--navy-3); color:#b9c7e6; font-size:11px; font-weight:800; border:1px solid rgba(255,255,255,.08);
+}
+.journey-step.active > span { background:var(--blue); color:#fff; border-color:transparent; }
+.journey-step b { display:block; font-size:13px; }
+.journey-step small { display:block; color:#8394b5; font-size:11px; margin-top:4px; }
+.journey-line { width:1px; height:19px; background:rgba(255,255,255,.13); margin-left:19px; }
+.panel-note { display:flex; gap:12px; padding:15px; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.07); border-radius:14px; }
+.note-icon {
+  flex:0 0 23px; width:23px; height:23px; display:grid; place-items:center; border-radius:50%;
+  background:rgba(93,132,255,.16); color:#9db5ff; font-size:12px; font-weight:700;
+}
+.panel-note p { margin:0; color:#aebbd4; font-size:11px; line-height:1.6; }
+
+.section-heading { margin-bottom: 48px; max-width: 730px; }
+.section-heading h2 { margin: 11px 0 14px; font-size: clamp(34px, 4vw, 50px); letter-spacing: -.045em; line-height: 1.08; }
+.section-heading p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.75; }
+.section-heading.light p { color:#aebbd4; }
+.section-heading.light h2 { color:#fff; }
+
+.steps-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.step-card {
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:26px;
+  position:relative; min-height:260px; transition:.25s ease;
+}
+.step-card:hover { transform:translateY(-5px); box-shadow:var(--shadow); border-color:#d9e1f1; }
+.step-number { position:absolute; right:20px; top:18px; font-size:11px; font-weight:800; color:#a5afc0; }
+.step-icon {
+  width:48px; height:48px; display:grid; place-items:center; border-radius:14px;
+  background:var(--blue-soft); color:var(--blue); font-size:20px; font-weight:800; margin-bottom:30px;
+}
+.step-card h3 { margin:0 0 10px; font-size:18px; letter-spacing:-.02em; }
+.step-card p { color:var(--muted); font-size:13px; line-height:1.7; margin:0; }
+
+.video-grid { display:grid; grid-template-columns:1.35fr 1fr 1fr; gap:18px; }
+.video-card { border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; background:#fff; }
+.video-thumb {
+  height:230px; position:relative; display:grid; place-items:center; overflow:hidden;
+  background:
+    radial-gradient(circle at 70% 25%, rgba(97,139,255,.44), transparent 28%),
+    linear-gradient(135deg, #0b1930, #162f59);
+}
+.video-thumb.compact { height:200px; background:linear-gradient(135deg,#111e36,#29446e); }
+.video-thumb.compact.alt { background:linear-gradient(135deg,#101d33,#1b3557); }
+.video-tag {
+  position:absolute; left:16px; top:16px; color:#d9e3fb; background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.12); border-radius:999px; padding:7px 9px;
+  font-size:9px; letter-spacing:.12em; font-weight:800;
+}
+.play-btn {
+  border:0; width:64px; height:64px; border-radius:50%; background:#fff; color:var(--blue);
+  box-shadow:0 15px 40px rgba(0,0,0,.25); padding-left:5px;
+}
+.play-btn.small { width:52px; height:52px; }
+.thumb-lines { position:absolute; inset:auto 22px 24px 22px; display:grid; gap:7px; }
+.thumb-lines i { height:2px; background:rgba(255,255,255,.13); border-radius:10px; }
+.thumb-lines i:nth-child(1){ width:64%; }.thumb-lines i:nth-child(2){ width:82%; }.thumb-lines i:nth-child(3){ width:51%; }
+.video-body { padding:22px; }
+.video-body h3 { margin:0 0 10px; font-size:18px; letter-spacing:-.025em; }
+.video-body p { margin:0 0 17px; color:var(--muted); font-size:13px; line-height:1.65; }
+.coming-soon { color:var(--blue); font-size:11px; font-weight:800; }
+
+.market-panel {
+  background:#0c1a31; border:1px solid rgba(255,255,255,.08); border-radius:var(--radius-lg);
+  padding:26px; box-shadow:0 30px 70px rgba(0,0,0,.18);
+}
+.market-toolbar { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,.08); padding-bottom:20px; }
+.market-toolbar > div { display:flex; align-items:center; gap:9px; }
+.market-toolbar b { font-size:14px; }.market-toolbar small,.market-time{font-size:10px;color:#8394b5}.market-time{border:1px solid rgba(255,255,255,.1);padding:7px 9px;border-radius:9px}
+.live-dot { width:7px;height:7px;border-radius:50%;background:#4ad58a;box-shadow:0 0 0 5px rgba(74,213,138,.08); }
+.ticker-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,.08); margin:22px 0; }
+.ticker { background:#0c1a31; padding:18px; }
+.ticker span { display:block; color:#8798b8; font-size:9px; letter-spacing:.09em; font-weight:800; }
+.ticker b { display:block; font-size:22px; margin:9px 0 5px; }
+.ticker small { color:#7183a6; font-size:10px; }
+.chart-placeholder { height:230px; display:flex; align-items:stretch; gap:12px; border-top:1px solid rgba(255,255,255,.05); padding-top:12px; }
+.chart-placeholder svg { width:100%; height:100%; }
+.chart-y { display:flex; flex-direction:column; justify-content:space-between; color:#526687; font-size:10px; }
+
+.packs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.pack-card {
+  border:1px solid var(--line); border-radius:var(--radius-md); padding:28px; background:#fff;
+  box-shadow:0 12px 35px rgba(16,26,44,.05);
+}
+.pack-card.highlighted { border-color:#bfd0ff; box-shadow:0 20px 55px rgba(53,104,255,.12); transform:translateY(-5px); }
+.pack-head { display:flex; justify-content:space-between; align-items:center; }
+.pack-head > span:last-child { color:#bbc4d2; font-size:11px; font-weight:800; }
+.risk { font-size:9px; font-weight:800; letter-spacing:.1em; padding:6px 8px; border-radius:999px; }
+.risk.low { color:var(--green); background:rgba(37,166,107,.10); }
+.risk.medium { color:var(--amber); background:rgba(216,141,23,.10); }
+.risk.high { color:var(--red); background:rgba(221,90,90,.10); }
+.pack-card h3 { margin:22px 0 8px; font-size:24px; letter-spacing:-.035em; }
+.pack-card > p { color:var(--muted); font-size:13px; line-height:1.7; min-height:66px; }
+.pack-bars { margin:25px 0 18px; display:grid; gap:15px; }
+.pack-bars div { display:grid; grid-template-columns:100px 1fr; align-items:center; gap:12px; }
+.pack-bars span { font-size:10px; color:#647085; font-weight:700; }
+.pack-bars i { height:7px; border-radius:999px; background:#edf1f7; position:relative; overflow:hidden; }
+.pack-bars i:after { content:""; position:absolute; inset:0 auto 0 0; width:var(--w); background:var(--blue); border-radius:inherit; }
+.pack-card small { color:#a0aabc; font-size:10px; }
+.legal-note { text-align:center; color:#9aa5b8; font-size:10px; margin-top:24px; }
+
+.instrument-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.instrument-card {
+  padding:26px; background:#fff; border:1px solid var(--line); border-radius:var(--radius-md);
+  display:flex; flex-direction:column; min-height:320px;
+}
+.instrument-symbol {
+  width:54px; height:54px; display:grid; place-items:center; border-radius:15px;
+  background:var(--navy); color:#fff; font-size:13px; font-weight:800; letter-spacing:-.03em; margin-bottom:30px;
+}
+.instrument-type { color:var(--blue); font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; }
+.instrument-card h3 { margin:8px 0 10px; font-size:21px; letter-spacing:-.03em; }
+.instrument-card p { color:var(--muted); font-size:13px; line-height:1.7; margin:0; }
+.text-link { margin-top:auto; text-align:left; border:0; background:transparent; padding:18px 0 0; color:var(--blue); font-size:12px; font-weight:800; }
+.text-link span { margin-left:5px; }
+
+.profile-grid { display:grid; grid-template-columns:.88fr 1.12fr; gap:80px; align-items:center; }
+.profile-types { display:flex; gap:12px; flex-wrap:wrap; margin-top:26px; }
+.profile-types span { display:flex;align-items:center;gap:7px;border:1px solid var(--line);padding:8px 10px;border-radius:999px;font-size:10px;font-weight:700;color:#68748a; }
+.dot { width:7px;height:7px;border-radius:50%;display:inline-block }.low-dot{background:var(--green)}.med-dot{background:var(--amber)}.high-dot{background:var(--red)}
+.quiz-card { background:var(--navy); color:#fff; border-radius:var(--radius-lg); padding:32px; box-shadow:0 30px 70px rgba(7,18,37,.16); }
+.quiz-progress { display:flex;justify-content:space-between;color:#8ea1c5;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:18px; }
+.quiz-progress b { color:#b9c8e6; }
+.quiz-card h3 { font-size:25px; letter-spacing:-.035em; margin:28px 0 20px; }
+.quiz-options { display:grid; gap:10px; }
+.quiz-options button {
+  color:#dbe4f5; background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.09);
+  border-radius:13px; text-align:left; padding:16px; font-size:12px; transition:.2s ease;
+}
+.quiz-options button:hover,.quiz-options button.selected { border-color:#688cff;background:rgba(53,104,255,.16); }
+.quiz-footer { display:flex;justify-content:space-between;gap:20px;color:#7386aa;font-size:10px;margin-top:20px; }
+
+.contact-section { background:linear-gradient(135deg,#f7faff,#fff); }
+.contact-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:80px; align-items:start; }
+.contact-copy h2 { margin:10px 0 16px;font-size:clamp(36px,4vw,52px);letter-spacing:-.045em; }
+.contact-copy > p { color:var(--muted);font-size:15px;line-height:1.8;max-width:520px; }
+.contact-points { margin-top:34px;display:grid;gap:18px; }
+.contact-points div { display:flex;gap:14px;align-items:flex-start; }
+.contact-points div > span { flex:0 0 34px;height:34px;display:grid;place-items:center;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-size:10px;font-weight:800; }
+.contact-points p { margin:0; }.contact-points b{display:block;font-size:13px}.contact-points small{display:block;color:#8490a5;font-size:11px;margin-top:4px}
+.contact-form { background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow); }
+.form-row { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+.contact-form label { display:grid;gap:7px;font-size:11px;font-weight:800;color:#455168;margin-bottom:14px; }
+.contact-form input,.contact-form textarea {
+  width:100%;border:1px solid #dfe5ee;border-radius:11px;background:#fbfcfe;color:var(--ink);
+  padding:13px 14px;outline:none;font-size:13px;transition:.2s ease;resize:vertical;
+}
+.contact-form input:focus,.contact-form textarea:focus { border-color:#88a4ff;box-shadow:0 0 0 3px rgba(53,104,255,.08);background:#fff; }
+.form-message { min-height:18px;margin:12px 0 0;font-size:11px;color:var(--green);font-weight:700;text-align:center; }
+
+.route-strip { background:var(--blue);color:#fff;padding:18px 0; }
+.route-strip .container { display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap; }
+.route-strip span { font-size:9px;font-weight:800;letter-spacing:.09em; }.route-strip i{opacity:.45;font-style:normal}
+
+.site-footer { background:var(--navy);color:#fff;padding:42px 0; }
+.footer-grid { display:flex;align-items:center;justify-content:space-between;gap:30px; }
+.footer-brand .brand-mark { background:#fff;color:var(--navy); }
+.site-footer p { color:#7f91b3;font-size:11px;margin:14px 0 0; }
+.footer-meta { text-align:right; }.footer-meta span{display:block;font-size:11px;font-weight:700}.footer-meta small{display:block;color:#7285a9;font-size:10px;margin-top:5px}
+
+@media (max-width: 1050px) {
+  .main-nav { gap: 14px; }
+  .main-nav a { display:none; }
+  .main-nav .nav-cta { display:inline-flex; }
+  .hero-grid { grid-template-columns:1fr; gap:48px; }
+  .hero { min-height:auto; }
+  .hero-copy { max-width:800px; }
+  .hero-panel { max-width:700px; }
+  .steps-grid { grid-template-columns:repeat(2,1fr); }
+  .video-grid { grid-template-columns:1fr 1fr; }.video-card.featured{grid-column:1/-1}
+  .packs-grid,.instrument-grid { grid-template-columns:1fr; }
+  .pack-card.highlighted { transform:none; }
+  .profile-grid,.contact-grid { grid-template-columns:1fr;gap:45px; }
+}
+
+@media (max-width: 720px) {
+  .container { width:min(100% - 28px, 1160px); }
+  .section { padding:76px 0; }
+  .nav-wrap { height:68px; }
+  .main-nav {
+    position:absolute;left:14px;right:14px;top:68px;background:#fff;border:1px solid var(--line);
+    border-radius:16px;padding:14px;display:none;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;
+  }
+  .main-nav.open { display:flex; }
+  .main-nav a,.main-nav .nav-cta { display:block;padding:12px 14px;border-radius:10px; }
+  .main-nav .nav-cta { background:var(--navy);text-align:center; }
+  .menu-toggle { display:block; }
+  .brand-name { font-size:14px; }
+  .hero { padding-top:68px; }
+  .hero-copy h1 { font-size:44px; }
+  .hero-text { font-size:16px; }
+  .hero-actions { flex-direction:column;align-items:stretch; }
+  .steps-grid,.video-grid,.ticker-grid { grid-template-columns:1fr; }
+  .video-card.featured { grid-column:auto; }
+  .ticker-grid { background:transparent;gap:8px; }.ticker{border:1px solid rgba(255,255,255,.08);border-radius:12px}
+  .market-time { display:none; }
+  .market-panel { padding:18px; }
+  .chart-placeholder { height:170px; }
+  .form-row { grid-template-columns:1fr;gap:0; }
+  .footer-grid { align-items:flex-start;flex-direction:column; }.footer-meta{text-align:left}
+  .profile-types { gap:7px; }
+}
+
+  
+.content-detail {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+.content-detail summary {
+  list-style: none;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.content-detail summary::-webkit-details-marker { display:none; }
+.content-detail summary:after { content:"+"; font-size:18px; line-height:1; }
+.content-detail[open] summary:after { content:"−"; }
+.content-detail p, .content-detail li {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.content-detail ul { margin: 12px 0 0; padding-left: 18px; }
+.prototype-badge {
+  display:inline-flex; align-items:center; gap:6px; margin-top:12px;
+  border-radius:999px; padding:7px 9px; background:#f1f4fa;
+  color:#738097; font-size:9px; font-weight:800; letter-spacing:.06em;
+}
+.market-copy {
+  color:#b9c7e0; font-size:12px; line-height:1.6; margin-top:8px;
+}
+.market-state {
+  display:block; color:#8ea3c9; font-size:11px; font-weight:700; margin-top:8px;
+}
+.quiz-result {
+  display:none; margin-top:18px; padding:16px; border-radius:13px;
+  background:rgba(53,104,255,.12); border:1px solid rgba(104,140,255,.28);
+}
+.quiz-result.show { display:block; }
+.quiz-result b { display:block; margin-bottom:6px; font-size:14px; }
+.quiz-result p { margin:0; color:#aebbd4; font-size:11px; line-height:1.6; }
+
+
+.original-videos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.original-videos .video-card {
+  display: flex;
+  flex-direction: column;
+}
+.youtube-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--navy);
+  overflow: hidden;
+}
+.youtube-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-tag-inline {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 10px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .10em;
+}
+.video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 2px 0 14px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+.video-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 760px) {
+  .original-videos {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ETAPA 2: encuesta completa + packs vinculados */
+.pack-card {
+  position: relative;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.pack-card.recommended {
+  border-color: var(--blue);
+  box-shadow: 0 24px 65px rgba(53,104,255,.20);
+  transform: translateY(-7px);
+}
+.pack-recommendation {
+  display: none;
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  box-shadow: 0 8px 22px rgba(53,104,255,.24);
+}
+.pack-card.recommended .pack-recommendation { display: inline-flex; }
+.pack-allocation {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 18px;
+}
+.pack-allocation div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--soft);
+  border-radius: 11px;
+}
+.pack-allocation span { color: #667085; font-size: 11px; font-weight: 700; }
+.pack-allocation b { color: var(--ink); font-size: 12px; }
+.quiz-card { overflow: hidden; }
+.quiz-progressbar {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  overflow: hidden;
+  margin: 16px 0 26px;
+}
+.quiz-progressbar i {
+  display: block;
+  width: 20%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--blue-2);
+  transition: width .25s ease;
+}
+.quiz-question { min-height: 260px; }
+.quiz-question h3 { margin-top: 0; }
+.quiz-options { display: grid; gap: 10px; }
+.quiz-options button { position: relative; padding-right: 46px; }
+.quiz-options button:after {
+  content: '→';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: .4;
+}
+.quiz-result {
+  display: none;
+  margin-top: 8px;
+  padding: 22px;
+  border-radius: 16px;
+  background: rgba(53,104,255,.12);
+  border: 1px solid rgba(104,140,255,.28);
+}
+.quiz-result.show { display: block; }
+.quiz-result .result-label {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.07);
+  color: #b9c8e6;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.quiz-result h3 { margin: 0 0 10px; font-size: 30px; }
+.quiz-result p { margin: 0 0 18px; color: #aebbd4; font-size: 12px; line-height: 1.7; }
+.quiz-result-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.quiz-result-actions .btn { min-height: 42px; padding: 0 16px; font-size: 11px; }
+.quiz-result-actions .btn-secondary { background: transparent; border-color: rgba(255,255,255,.16); color: #fff; }
+.quiz-back { border: 0; background: transparent; color: #8ea1c5; padding: 0; font-size: 10px; font-weight: 700; }
+.quiz-back:hover { color: #fff; }
+.quiz-meta { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 18px; }
+.quiz-meta small { color: #7386aa; font-size: 10px; line-height: 1.5; }
+.quiz-meta span { color: #b9c8e6; font-size: 10px; font-weight: 800; white-space: nowrap; }
+@media (max-width: 720px) {
+  .quiz-question { min-height: auto; }
+  .quiz-result-actions { flex-direction: column; }
+  .quiz-result-actions .btn { width: 100%; }
+}
+
+</style>
+</head>
+
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Retail20inversiones - Inicio">
+        <span class="brand-mark">R20</span>
+        <span class="brand-name">Retail20inversiones</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#primeros-pasos">Primeros pasos</a>
+        <a href="#videos">Videos</a>
+        <a href="#monitor">Monitor</a>
+        <a href="#packs">Packs</a>
+        <a href="#instrumentos">Instrumentos</a>
+        <a href="#perfil">Perfil</a>
+        <a class="nav-cta" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. INTRODUCCIÓN -->
+    <section class="hero section" id="inicio">
+      <div class="hero-glow hero-glow-a"></div>
+      <div class="hero-glow hero-glow-b"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> 01 · INTRODUCCIÓN</div>
+
+          <h1>
+            Empezá a invertir con una estrategia que
+            <strong>tenga sentido para vos.</strong>
+          </h1>
+
+          <p class="hero-text">
+            Una guía simple para entender cómo empezar, conocer las alternativas disponibles
+            y dar tus primeros pasos con información clara y acompañamiento personalizado.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#primeros-pasos">Comenzar ahora</a>
+            <a class="btn btn-secondary" href="#videos">Ver contenido</a>
+          </div>
+
+          <div class="hero-pills">
+            <span>Información simple</span>
+            <span>Contenido educativo</span>
+            <span>Acompañamiento</span>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-top">
+            <div>
+              <span class="mini-label">RECORRIDO</span>
+              <h2>De cero a tu primera inversión</h2>
+            </div>
+            <span class="status-dot">En línea</span>
+          </div>
+
+          <div class="journey">
+            <div class="journey-step active">
+              <span>01</span>
+              <div><b>Entendé la propuesta</b><small>Empezá por lo esencial</small></div>
+            </div>
+            <div class="journey-line"></div>
+            <div class="journey-step">
+              <span>02</span>
+              <div><b>Conocé las alternativas</b><small>Videos, instrumentos y mercado</small></div>
+            </div>
+            <div class="journey-line"></div>
+            <div class="journey-step">
+              <span>03</span>
+              <div><b>Identificá tu perfil</b><small>Definí objetivos y tolerancia al riesgo</small></div>
+            </div>
+            <div class="journey-line"></div>
+            <div class="journey-step">
+              <span>04</span>
+              <div><b>Contactanos</b><small>Avanzá con acompañamiento</small></div>
+            </div>
+          </div>
+
+          <div class="panel-note">
+            <span class="note-icon">i</span>
+            <p>La idea no es invertir por invertir, sino construir una estrategia acorde a cada persona.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PRIMEROS PASOS -->
+    <section class="section soft-section" id="primeros-pasos">
+      <div class="container">
+        <div class="section-heading centered">
+          <span class="section-kicker">02 · PRIMEROS PASOS</span>
+          <h2>Una guía simple para empezar</h2>
+          <p>El recorrido inicial, explicado de forma clara para alguien que nunca operó.</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">1</span>
+            <div class="step-icon">◎</div>
+            <h3>Abrí tu cuenta</h3>
+            <p>Completá el alta para poder acceder a la plataforma y comenzar el proceso.</p>
+            <details class="content-detail">
+              <summary>Ver qué incluye</summary>
+              <ul>
+                <li>Completar los datos solicitados para el alta.</li>
+                <li>Validar la identidad y esperar la confirmación de la cuenta.</li>
+                <li>Realizar el primer ingreso a la plataforma.</li>
+              </ul>
+            </details>
+          </article>
+          <article class="step-card">
+            <span class="step-number">2</span>
+            <div class="step-icon">↗</div>
+            <h3>Fondeá la cuenta</h3>
+            <p>Transferí el capital que quieras destinar a tus primeras inversiones.</p>
+            <details class="content-detail">
+              <summary>Ver qué incluye</summary>
+              <ul>
+                <li>Elegir el monto inicial a invertir.</li>
+                <li>Transferir desde una cuenta bancaria propia.</li>
+                <li>Esperar la acreditación antes de operar.</li>
+              </ul>
+            </details>
+          </article>
+          <article class="step-card">
+            <span class="step-number">3</span>
+            <div class="step-icon">◫</div>
+            <h3>Conocé las opciones</h3>
+            <p>Entendé los instrumentos disponibles antes de tomar una decisión.</p>
+            <details class="content-detail">
+              <summary>Ver qué incluye</summary>
+              <ul>
+                <li>Fondos Comunes de Inversión.</li>
+                <li>Obligaciones Negociables.</li>
+                <li>CEDEARs y acciones.</li>
+              </ul>
+            </details>
+          </article>
+          <article class="step-card">
+            <span class="step-number">4</span>
+            <div class="step-icon">✓</div>
+            <h3>Definí tu estrategia</h3>
+            <p>Elegí una alternativa alineada con tus objetivos, plazo y perfil de riesgo.</p>
+            <details class="content-detail">
+              <summary>Ver qué se analiza</summary>
+              <ul>
+                <li>Objetivo: ahorro, renta, crecimiento o preservación.</li>
+                <li>Horizonte: corto, mediano o largo plazo.</li>
+                <li>Tolerancia a las variaciones del mercado.</li>
+              </ul>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. VIDEOS INTRODUCTORIOS -->
+    <section class="section" id="videos">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">03 · VIDEOS INTRODUCTORIOS</span>
+          <h2>Más videos introductorios</h2>
+          <p>Mirá estos videos antes de nuestra primera reunión para que lleguemos al mismo punto de partida.</p>
+        </div>
+
+        <div class="video-grid original-videos">
+          <article class="video-card">
+            <div class="youtube-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/lGBgGCcQ63c"
+                title="Introducción al Mercado de Capitales"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-body">
+              <span class="video-tag-inline">VIDEO</span>
+              <h3>Introducción al Mercado de Capitales</h3>
+              <p>¿Qué es el mercado de capitales y por qué es importante para tus ahorros? Una visión general para empezar desde cero.</p>
+              <a class="video-link" href="https://youtu.be/lGBgGCcQ63c" target="_blank" rel="noopener">Ver en YouTube <span>↗</span></a>
+              <span class="coming-soon">📹 Video introductorio</span>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="youtube-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/5D0l6SUwvPI"
+                title="Qué es la Renta Fija - Obligaciones Negociables"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-body">
+              <span class="video-tag-inline">VIDEO</span>
+              <h3>¿Qué es la Renta Fija (ON)?</h3>
+              <p>Conocé qué son las Obligaciones Negociables y cómo funcionan como instrumento de inversión de bajo riesgo.</p>
+              <a class="video-link" href="https://youtu.be/5D0l6SUwvPI" target="_blank" rel="noopener">Ver en YouTube <span>↗</span></a>
+              <span class="coming-soon">📹 Renta Fija</span>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="youtube-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/Fwf7kIEWRF8"
+                title="Qué es la Renta Variable - CEDEARs"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-body">
+              <span class="video-tag-inline">VIDEO</span>
+              <h3>¿Qué es la Renta Variable (CEDEARs)?</h3>
+              <p>Entendé qué son los CEDEARs y cómo te permiten invertir en empresas globales desde Argentina.</p>
+              <a class="video-link" href="https://youtu.be/Fwf7kIEWRF8" target="_blank" rel="noopener">Ver en YouTube <span>↗</span></a>
+              <span class="coming-soon">📹 CEDEARs</span>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="youtube-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/6b_LNGHxWZ0"
+                title="Cómo armar una Cartera de Inversión"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-body">
+              <span class="video-tag-inline">VIDEO</span>
+              <h3>¿Cómo armar una Cartera de Inversión?</h3>
+              <p>Aprendé los principios básicos para diversificar y estructurar una cartera acorde a tus objetivos y perfil de riesgo.</p>
+              <a class="video-link" href="https://youtu.be/6b_LNGHxWZ0" target="_blank" rel="noopener">Ver en YouTube <span>↗</span></a>
+              <span class="coming-soon">📹 Estrategia de cartera</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. MONITOR DE MERCADO -->
+    <section class="section dark-section" id="monitor">
+      <div class="container">
+        <div class="section-heading light">
+          <span class="section-kicker">04 · MONITOR DE MERCADO</span>
+          <h2>Empezá a mirar el mercado</h2>
+          <p>Un primer acercamiento visual a los datos y movimientos que aparecen todos los días.</p>
+        </div>
+
+        <div class="market-panel">
+          <div class="market-toolbar">
+            <div>
+              <span class="live-dot"></span>
+              <b>Mercado</b>
+              <small>Vista demostrativa</small>
+            </div>
+            <span class="market-time">Actualización en próxima etapa</span>
+          </div>
+
+          <div class="ticker-grid">
+            <div class="ticker"><span>MERVAL</span><b>Índice local</b><small>Referencia del mercado accionario argentino.</small><em class="market-state">Dato en vivo: próxima etapa</em></div>
+            <div class="ticker"><span>USD MEP</span><b>Dólar financiero</b><small>Referencia para operaciones financieras en pesos y dólares.</small><em class="market-state">Dato en vivo: próxima etapa</em></div>
+            <div class="ticker"><span>S&amp;P 500</span><b>Mercado EE.UU.</b><small>Índice de referencia de grandes compañías estadounidenses.</small><em class="market-state">Dato en vivo: próxima etapa</em></div>
+            <div class="ticker"><span>RIESGO PAÍS</span><b>Indicador argentino</b><small>Mide la percepción de riesgo relativo de la deuda soberana.</small><em class="market-state">Dato en vivo: próxima etapa</em></div>
+          </div>
+
+          <div class="chart-placeholder" aria-hidden="true">
+            <div class="chart-y"><span>+</span><span></span><span></span><span>−</span></div>
+            <svg viewBox="0 0 900 220" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#4f7cff" stop-opacity=".30"/>
+                  <stop offset="100%" stop-color="#4f7cff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 170 C80 155 110 178 180 142 S300 130 350 122 S440 153 500 112 S620 98 675 82 S760 98 815 56 S870 62 900 38 L900 220 L0 220 Z" fill="url(#chartFill)"/>
+              <path d="M0 170 C80 155 110 178 180 142 S300 130 350 122 S440 153 500 112 S620 98 675 82 S760 98 815 56 S870 62 900 38" fill="none" stroke="#6d92ff" stroke-width="4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PACKS SUGERIDOS -->
+    <section class="section" id="packs">
+      <div class="container">
+        <div class="section-heading centered">
+          <span class="section-kicker">05 · PACKS DE ACCIONES SUGERIDOS</span>
+          <h2>Una orientación según cada perfil</h2>
+          <p>Tres composiciones educativas para mostrar cómo cambia una cartera cuando cambia la tolerancia al riesgo y el horizonte de inversión.</p>
+        </div>
+
+        <div class="packs-grid">
+          <article class="pack-card" id="pack-conservador" data-profile="Conservador">
+            <span class="pack-recommendation">PACK SUGERIDO PARA TU PERFIL</span>
+            <div class="pack-head"><span class="risk low">CONSERVADOR</span><span>01</span></div>
+            <h3>Estabilidad</h3>
+            <p>Prioriza la preservación del capital y busca limitar las variaciones de corto plazo.</p>
+            <div class="pack-allocation">
+              <div><span>Renta fija</span><b>70%</b></div>
+              <div><span>Fondos Comunes</span><b>20%</b></div>
+              <div><span>CEDEARs / Acciones</span><b>10%</b></div>
+            </div>
+            <div class="pack-bars">
+              <div><span>Estabilidad</span><i style="--w:82%"></i></div>
+              <div><span>Crecimiento</span><i style="--w:28%"></i></div>
+            </div>
+            <details class="content-detail">
+              <summary>¿Para quién está pensado?</summary>
+              <p>Para una persona que valora la estabilidad, tiene menor tolerancia a las caídas y puede necesitar disponer del dinero en un horizonte relativamente cercano.</p>
+            </details>
+          </article>
+
+          <article class="pack-card" id="pack-moderado" data-profile="Moderado">
+            <span class="pack-recommendation">PACK SUGERIDO PARA TU PERFIL</span>
+            <div class="pack-head"><span class="risk medium">MODERADO</span><span>02</span></div>
+            <h3>Equilibrio</h3>
+            <p>Combina estabilidad y crecimiento con una exposición diversificada.</p>
+            <div class="pack-allocation">
+              <div><span>Renta fija</span><b>45%</b></div>
+              <div><span>Fondos Comunes</span><b>20%</b></div>
+              <div><span>CEDEARs / Acciones</span><b>35%</b></div>
+            </div>
+            <div class="pack-bars">
+              <div><span>Estabilidad</span><i style="--w:58%"></i></div>
+              <div><span>Crecimiento</span><i style="--w:55%"></i></div>
+            </div>
+            <details class="content-detail">
+              <summary>¿Para quién está pensado?</summary>
+              <p>Para quien acepta cierta variación en el valor de la cartera a cambio de buscar crecimiento, pero sin concentrar todo el riesgo en activos de renta variable.</p>
+            </details>
+          </article>
+
+          <article class="pack-card" id="pack-agresivo" data-profile="Agresivo">
+            <span class="pack-recommendation">PACK SUGERIDO PARA TU PERFIL</span>
+            <div class="pack-head"><span class="risk high">AGRESIVO</span><span>03</span></div>
+            <h3>Crecimiento</h3>
+            <p>Mayor exposición a activos de crecimiento y mayor tolerancia a las fluctuaciones.</p>
+            <div class="pack-allocation">
+              <div><span>Renta fija</span><b>20%</b></div>
+              <div><span>Fondos Comunes</span><b>20%</b></div>
+              <div><span>CEDEARs / Acciones</span><b>60%</b></div>
+            </div>
+            <div class="pack-bars">
+              <div><span>Estabilidad</span><i style="--w:30%"></i></div>
+              <div><span>Crecimiento</span><i style="--w:82%"></i></div>
+            </div>
+            <details class="content-detail">
+              <summary>¿Para quién está pensado?</summary>
+              <p>Para una persona con horizonte más largo, mayor tolerancia a las caídas temporales y disposición a asumir más volatilidad en busca de crecimiento.</p>
+            </details>
+          </article>
+        </div>
+
+        <p class="legal-note">Composiciones exclusivamente educativas e ilustrativas. No constituyen una recomendación de inversión.</p>
+      </div>
+    </section>
+
+    <!-- 6. VIDEOS EXPLICATIVOS DE INSTRUMENTOS -->
+    <section class="section soft-section" id="instrumentos">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">06 · VIDEOS DE INSTRUMENTOS</span>
+          <h2>Conocé las principales alternativas</h2>
+          <p>Videos explicativos para entender, de manera sencilla, qué es cada instrumento y para qué puede servir.</p>
+        </div>
+
+        <div class="instrument-grid">
+          <article class="instrument-card">
+            <span class="instrument-symbol">FCI</span>
+            <div>
+              <span class="instrument-type">Fondos</span>
+              <h3>Fondos Comunes de Inversión</h3>
+              <p>Una forma simple de acceder a una cartera administrada profesionalmente.</p>
+            </div>
+            <details class="content-detail">
+              <summary>Ver explicación</summary>
+              <p>Reúnen el dinero de distintos inversores en una cartera administrada. Permiten acceder de manera sencilla a diferentes estrategias según el fondo elegido.</p>
+              <span class="prototype-badge">VIDEO EXPLICATIVO · PRÓXIMA ETAPA</span>
+            </details>
+          </article>
+
+          <article class="instrument-card">
+            <span class="instrument-symbol">ON</span>
+            <div>
+              <span class="instrument-type">Renta fija</span>
+              <h3>Obligaciones Negociables</h3>
+              <p>Instrumentos de deuda emitidos por empresas para financiarse.</p>
+            </div>
+            <details class="content-detail">
+              <summary>Ver explicación</summary>
+              <p>Son títulos de deuda emitidos por empresas. El inversor presta capital y recibe las condiciones de pago definidas por cada emisión.</p>
+              <span class="prototype-badge">VIDEO EXPLICATIVO · PRÓXIMA ETAPA</span>
+            </details>
+          </article>
+
+          <article class="instrument-card">
+            <span class="instrument-symbol">CE</span>
+            <div>
+              <span class="instrument-type">Renta variable</span>
+              <h3>CEDEARs y Acciones</h3>
+              <p>Alternativas para participar del crecimiento de empresas locales y globales.</p>
+            </div>
+            <details class="content-detail">
+              <summary>Ver explicación</summary>
+              <p>Permiten tomar exposición al desempeño de empresas. Los CEDEARs facilitan invertir desde Argentina en compañías que cotizan en mercados del exterior.</p>
+              <span class="prototype-badge">VIDEO EXPLICATIVO · PRÓXIMA ETAPA</span>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ENCUESTA PERFIL DE INVERSOR -->
+    <section class="section" id="perfil">
+      <div class="container profile-grid">
+        <div class="section-heading">
+          <span class="section-kicker">07 · PERFIL DE INVERSOR</span>
+          <h2>Descubrí tu perfil en 5 preguntas</h2>
+          <p>La encuesta combina objetivo, plazo, reacción ante una caída, experiencia previa y necesidad de liquidez para construir un resultado preliminar.</p>
+          <div class="profile-types">
+            <span><i class="dot low-dot"></i>Conservador</span>
+            <span><i class="dot med-dot"></i>Moderado</span>
+            <span><i class="dot high-dot"></i>Agresivo</span>
+          </div>
+          <p class="legal-note" style="text-align:left;margin-top:22px;">Resultado educativo y orientativo. No reemplaza una evaluación profesional ni constituye asesoramiento financiero.</p>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-progress">
+            <span>Encuesta de perfil</span>
+            <b id="quizStage">Pregunta 1 de 5</b>
+          </div>
+          <div class="quiz-progressbar" aria-hidden="true"><i id="quizProgressBar"></i></div>
+
+          <div id="quizQuestionWrap" class="quiz-question">
+            <h3 id="quizQuestion">¿Cuál es tu principal objetivo al invertir?</h3>
+            <div class="quiz-options" id="quizOptions"></div>
+            <div class="quiz-meta">
+              <button class="quiz-back" id="quizBack" type="button" hidden>← Volver</button>
+              <small id="quizHint">Elegí la opción que más se parezca a vos.</small>
+              <span id="quizCounter">1 / 5</span>
+            </div>
+          </div>
+
+          <div class="quiz-result" id="quizResult">
+            <span class="result-label">RESULTADO PRELIMINAR</span>
+            <h3 id="quizResultTitle"></h3>
+            <p id="quizResultText"></p>
+            <div class="quiz-result-actions">
+              <button class="btn btn-primary" id="goToPack" type="button">Ver pack orientativo</button>
+              <button class="btn btn-secondary" id="restartQuiz" type="button">Rehacer encuesta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONTACTO -->
+    <section class="section contact-section" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <span class="section-kicker">08 · CONTACTO</span>
+          <h2>¿Querés dar el próximo paso?</h2>
+          <p>
+            Dejanos tus datos para hacer una consulta, recibir acompañamiento y avanzar
+            hacia la apertura de tu cuenta.
+          </p>
+
+          <div class="contact-points">
+            <div><span>01</span><p><b>Consulta inicial</b><small>Contanos qué necesitás.</small></p></div>
+            <div><span>02</span><p><b>Acompañamiento</b><small>Te ayudamos a ordenar tus objetivos.</small></p></div>
+            <div><span>03</span><p><b>Próximo paso</b><small>Avanzamos juntos con la apertura.</small></p></div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <label>Nombre
+              <input type="text" name="nombre" placeholder="Tu nombre" required />
+            </label>
+            <label>Apellido
+              <input type="text" name="apellido" placeholder="Tu apellido" required />
+            </label>
+          </div>
+          <label>Email
+            <input type="email" name="email" placeholder="tu@mail.com" required />
+          </label>
+          <label>Celular
+            <input type="tel" name="celular" placeholder="11 1234-5678" />
+          </label>
+          <label>Consulta
+            <textarea name="consulta" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+          </label>
+          <button class="btn btn-primary btn-full" type="submit">Probar formulario</button>
+          <p class="form-message" id="formMessage" role="status">En esta etapa el formulario funciona como demostración visual.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="route-strip" aria-label="Recorrido esperado">
+      <div class="container">
+        <span>RECIBE EL LINK</span><i>→</i>
+        <span>ENTRA A LA WEB</span><i>→</i>
+        <span>ENTIENDE</span><i>→</i>
+        <span>SE INFORMA</span><i>→</i>
+        <span>DEFINE SU PERFIL</span><i>→</i>
+        <span>CONTACTA</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#top">
+          <span class="brand-mark">R20</span>
+          <span class="brand-name">Retail20inversiones</span>
+        </a>
+        <p>Información clara para tomar mejores decisiones.</p>
+      </div>
+
+      <div class="footer-meta">
+        <span>Proyecto Web · Grupo 5 PPS2</span>
+        <small>Versión académica · Etapa 2</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+const menuButton = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".main-nav");
+
+if (menuButton && nav) {
+  menuButton.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", String(open));
+  });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+const quizQuestions = [
+  {
+    question: "¿Cuál es tu principal objetivo al invertir?",
+    options: [
+      { label: "Preservar mi capital y priorizar estabilidad", score: 1 },
+      { label: "Combinar estabilidad y crecimiento", score: 2 },
+      { label: "Buscar crecimiento a largo plazo", score: 3 }
+    ]
+  },
+  {
+    question: "¿Durante cuánto tiempo podrías mantener invertido este dinero?",
+    options: [
+      { label: "Menos de 1 año", score: 1 },
+      { label: "Entre 1 y 3 años", score: 2 },
+      { label: "Más de 3 años", score: 3 }
+    ]
+  },
+  {
+    question: "Si tu cartera bajara 15% en poco tiempo, ¿qué harías?",
+    options: [
+      { label: "Vendería para evitar una pérdida mayor", score: 1 },
+      { label: "Esperaría antes de tomar una decisión", score: 2 },
+      { label: "Mantendría o evaluaría invertir más", score: 3 }
+    ]
+  },
+  {
+    question: "¿Qué experiencia tenés invirtiendo?",
+    options: [
+      { label: "Ninguna o muy poca", score: 1 },
+      { label: "Ya invertí en algunos instrumentos", score: 2 },
+      { label: "Tengo experiencia con distintos activos", score: 3 }
+    ]
+  },
+  {
+    question: "¿Qué tan probable es que necesites este dinero pronto?",
+    options: [
+      { label: "Muy probable", score: 1 },
+      { label: "Puede ser, pero no es mi idea principal", score: 2 },
+      { label: "Poco probable; es capital de largo plazo", score: 3 }
+    ]
+  }
+];
+
+const quizState = { current: 0, answers: [] };
+const quizQuestionWrap = document.getElementById("quizQuestionWrap");
+const quizQuestion = document.getElementById("quizQuestion");
+const quizOptions = document.getElementById("quizOptions");
+const quizStage = document.getElementById("quizStage");
+const quizCounter = document.getElementById("quizCounter");
+const quizProgressBar = document.getElementById("quizProgressBar");
+const quizBack = document.getElementById("quizBack");
+const quizResult = document.getElementById("quizResult");
+const quizResultTitle = document.getElementById("quizResultTitle");
+const quizResultText = document.getElementById("quizResultText");
+const goToPack = document.getElementById("goToPack");
+const restartQuiz = document.getElementById("restartQuiz");
+let resultingProfile = null;
+
+const profileCopy = {
+  Conservador: "Tu resultado muestra una preferencia por estabilidad, menor exposición a fluctuaciones y una mayor necesidad de preservar el capital. El pack Estabilidad ilustra cómo podría verse una composición de ese tipo.",
+  Moderado: "Tu resultado combina búsqueda de crecimiento con una tolerancia intermedia a las variaciones. El pack Equilibrio muestra una composición diversificada entre estabilidad y crecimiento.",
+  Agresivo: "Tu resultado refleja mayor tolerancia a las fluctuaciones y un horizonte más orientado al crecimiento. El pack Crecimiento ilustra una mayor exposición a activos de renta variable."
+};
+
+function renderQuizQuestion() {
+  const item = quizQuestions[quizState.current];
+  quizQuestion.textContent = item.question;
+  quizOptions.innerHTML = "";
+
+  item.options.forEach(option => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = option.label;
+    button.dataset.score = option.score;
+    if (quizState.answers[quizState.current] === option.score) button.classList.add("selected");
+
+    button.addEventListener("click", () => {
+      quizState.answers[quizState.current] = option.score;
+      if (quizState.current < quizQuestions.length - 1) {
+        quizState.current += 1;
+        renderQuizQuestion();
+      } else {
+        showQuizResult();
+      }
+    });
+    quizOptions.appendChild(button);
+  });
+
+  const currentNumber = quizState.current + 1;
+  quizStage.textContent = `Pregunta ${currentNumber} de ${quizQuestions.length}`;
+  quizCounter.textContent = `${currentNumber} / ${quizQuestions.length}`;
+  quizProgressBar.style.width = `${(currentNumber / quizQuestions.length) * 100}%`;
+  quizBack.hidden = quizState.current === 0;
+  quizQuestionWrap.style.display = "block";
+  quizResult.classList.remove("show");
+}
+
+function calculateProfile() {
+  const total = quizState.answers.reduce((sum, score) => sum + score, 0);
+  if (total <= 7) return "Conservador";
+  if (total <= 11) return "Moderado";
+  return "Agresivo";
+}
+
+function showQuizResult() {
+  resultingProfile = calculateProfile();
+  quizQuestionWrap.style.display = "none";
+  quizStage.textContent = "Encuesta completada";
+  quizProgressBar.style.width = "100%";
+  quizResultTitle.textContent = resultingProfile;
+  quizResultText.textContent = profileCopy[resultingProfile];
+  quizResult.classList.add("show");
+}
+
+function clearPackHighlights() {
+  document.querySelectorAll(".pack-card").forEach(card => card.classList.remove("recommended"));
+}
+
+quizBack.addEventListener("click", () => {
+  if (quizState.current > 0) {
+    quizState.current -= 1;
+    renderQuizQuestion();
+  }
+});
+
+restartQuiz.addEventListener("click", () => {
+  quizState.current = 0;
+  quizState.answers = [];
+  resultingProfile = null;
+  clearPackHighlights();
+  renderQuizQuestion();
+});
+
+goToPack.addEventListener("click", () => {
+  if (!resultingProfile) return;
+  clearPackHighlights();
+  const id = `pack-${resultingProfile.toLowerCase()}`;
+  const card = document.getElementById(id);
+  if (card) {
+    card.classList.add("recommended");
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+});
+
+renderQuizQuestion();
+
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+if (contactForm && formMessage) {
+  contactForm.addEventListener("submit", event => {
+    event.preventDefault();
+    formMessage.textContent = "¡Perfecto! En esta etapa registramos la interacción visual. El envío real se conectará más adelante.";
+  });
+}
+
+  </script>
+</body>
+</html>
